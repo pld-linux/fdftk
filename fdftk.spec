@@ -6,7 +6,7 @@ Version:	5
 Release:	1
 License:	restricted, no source
 Group:		Libraries
-# note: to download source, you must use a browser with JavaScript and cookies
+# note: to download source, you must use a browser with cookies
 # enabled and accept license that appears under Source0 URL at the first time
 Source0:	http://partners.adobe.com/asn/developer/acrosdk/fdftk/%{name}v%{version}.tar.gz
 URL:		http://partners.adobe.com/asn/developer/acrosdk/forms.html
