@@ -3,15 +3,16 @@ Summary:	Forms Data Format Toolkit
 Summary(pl):	Zestaw narzêdzi do formularzy PDF
 Name:		fdftk
 Version:	5
-Release:	1
+Release:	2
 License:	restricted, no source
 Group:		Libraries
 # note: to download source, you must use a browser with cookies
 # enabled and accept license that appears under Source0 URL at the first time
-Source0:	http://partners.adobe.com/asn/developer/acrosdk/fdftk/%{name}v%{version}.tar.gz
+#Source0:	http://partners.adobe.com/asn/developer/acrosdk/fdftk/%{name}v%{version}.tar.gz
+Source0:	%{name}v%{version}.tar.gz
 URL:		http://partners.adobe.com/asn/developer/acrosdk/forms.html
 NoSource:	0
-BuildRequires:	rpm-perlprov
+BuildRequires:	rpm-perlprov >= 4.1-13
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -68,9 +69,9 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir},%{_examplesdir}/%{name}-%{version}}
 
 install HeadersAndLibraries/headers/fdftk.h $RPM_BUILD_ROOT%{_includedir}
-install -D HeadersAndLibraries/headers/FDF.pm $RPM_BUILD_ROOT%{perl_sitearch}/Acrobat/FDF.pm
+install -D HeadersAndLibraries/headers/FDF.pm $RPM_BUILD_ROOT%{perl_vendorarch}/Acrobat/FDF.pm
 install HeadersAndLibraries/linux/C/libfdftk.so $RPM_BUILD_ROOT%{_libdir}
-install -D HeadersAndLibraries/linux/PERL/fdf.so $RPM_BUILD_ROOT%{perl_sitearch}/auto/Acrobat/FDF/fdf.so
+install -D HeadersAndLibraries/linux/PERL/fdf.so $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Acrobat/FDF/fdf.so
 
 cp -rf FormsExamples Samples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -98,5 +99,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n perl-Acrobat-FDF
 %defattr(644,root,root,755)
-%{perl_sitearch}/Acrobat
-%attr(755,root,root) %{perl_sitearch}/auto/Acrobat
+%{perl_vendorarch}/Acrobat
+%attr(755,root,root) %{perl_vendorarch}/auto/Acrobat
