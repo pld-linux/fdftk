@@ -27,7 +27,7 @@ biblioteka C.
 Summary:	Forms Data Format Toolkit - header file
 Summary(pl):	Zestaw narzêdzi do formularzy PDF - plik nag³ówkowy
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Acrobat Forms (PDF) Data Format Toolkit - header file.
