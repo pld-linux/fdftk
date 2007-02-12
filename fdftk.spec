@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Forms Data Format Toolkit
-Summary(pl):	Zestaw narzêdzi do formularzy PDF
+Summary(pl.UTF-8):   Zestaw narzÄ™dzi do formularzy PDF
 Name:		fdftk
 Version:	5
 Release:	2
@@ -19,46 +19,46 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Acrobat Forms (PDF) Data Format Toolkit - C library.
 
-%description -l pl
-Zestaw narzêdzi do formularzy w plikach PDF (Acrobat Forms) -
+%description -l pl.UTF-8
+Zestaw narzÄ™dzi do formularzy w plikach PDF (Acrobat Forms) -
 biblioteka C.
 
 %package devel
 Summary:	Forms Data Format Toolkit - header file
-Summary(pl):	Zestaw narzêdzi do formularzy PDF - plik nag³ówkowy
+Summary(pl.UTF-8):   Zestaw narzÄ™dzi do formularzy PDF - plik nagÅ‚Ã³wkowy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Acrobat Forms (PDF) Data Format Toolkit - header file.
 
-%description devel -l pl
-Zestaw narzêdzi do formularzy w plikach PDF (Acrobat Forms) - plik
-nag³ówkowy.
+%description devel -l pl.UTF-8
+Zestaw narzÄ™dzi do formularzy w plikach PDF (Acrobat Forms) - plik
+nagÅ‚Ã³wkowy.
 
 %package doc
 Summary:	Documentation and licensing information for fdftk
-Summary(pl):	Dokumentacja i tre¶æ licencji fdftk
+Summary(pl.UTF-8):   Dokumentacja i treÅ›Ä‡ licencji fdftk
 Group:		Documentation
 
 %description doc
 Documentation and licensing information for fdftk - common for C++
 library and Perl module.
 
-%description doc -l pl
-Dokumentacja i tre¶æ licencji fdftk - wspólne dla biblioteki w C++ i
-modu³u Perla.
+%description doc -l pl.UTF-8
+Dokumentacja i treÅ›Ä‡ licencji fdftk - wspÃ³lne dla biblioteki w C++ i
+moduÅ‚u Perla.
 
 %package -n perl-Acrobat-FDF
 Summary:	Acrobat::FDF Perl module
-Summary(pl):	Modu³ Perla Acrobat::FDF
+Summary(pl.UTF-8):   ModuÅ‚ Perla Acrobat::FDF
 Group:		Development/Languages/Perl
 
 %description -n perl-Acrobat-FDF
 Acrobat Forms (PDF) Data Format Toolkit - Perl module.
 
-%description -n perl-Acrobat-FDF -l pl
-Zestaw narzêdzi do formularzy w plikach PDF (Acrobat Forms) - modu³
+%description -n perl-Acrobat-FDF -l pl.UTF-8
+Zestaw narzÄ™dzi do formularzy w plikach PDF (Acrobat Forms) - moduÅ‚
 Perla.
 
 %prep
