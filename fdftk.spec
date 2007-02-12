@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Forms Data Format Toolkit
-Summary(pl.UTF-8):   Zestaw narzędzi do formularzy PDF
+Summary(pl.UTF-8):	Zestaw narzędzi do formularzy PDF
 Name:		fdftk
 Version:	5
 Release:	2
@@ -25,7 +25,7 @@ biblioteka C.
 
 %package devel
 Summary:	Forms Data Format Toolkit - header file
-Summary(pl.UTF-8):   Zestaw narzędzi do formularzy PDF - plik nagłówkowy
+Summary(pl.UTF-8):	Zestaw narzędzi do formularzy PDF - plik nagłówkowy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -38,7 +38,7 @@ nagłówkowy.
 
 %package doc
 Summary:	Documentation and licensing information for fdftk
-Summary(pl.UTF-8):   Dokumentacja i treść licencji fdftk
+Summary(pl.UTF-8):	Dokumentacja i treść licencji fdftk
 Group:		Documentation
 
 %description doc
@@ -51,7 +51,7 @@ modułu Perla.
 
 %package -n perl-Acrobat-FDF
 Summary:	Acrobat::FDF Perl module
-Summary(pl.UTF-8):   Moduł Perla Acrobat::FDF
+Summary(pl.UTF-8):	Moduł Perla Acrobat::FDF
 Group:		Development/Languages/Perl
 
 %description -n perl-Acrobat-FDF
