@@ -2,16 +2,14 @@
 Summary:	Forms Data Format Toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi do formularzy PDF
 Name:		fdftk
-Version:	5
-Release:	2
+Version:	6
+Release:	1
 License:	restricted, no source
 Group:		Libraries
-# note: to download source, you must use a browser with cookies
-# enabled and accept license that appears under Source0 URL at the first time
-#Source0:	http://partners.adobe.com/asn/developer/acrosdk/fdftk/%{name}v%{version}.tar.gz
-Source0:	%{name}v%{version}.tar.gz
-URL:		http://partners.adobe.com/asn/developer/acrosdk/forms.html
+Source0:	http://download.macromedia.com/pub/developer/acrobat/FDFToolkitForUnix.tar.gz
+# NoSource0-md5:	c67eb1dc626f48dcb8e388c89106dd58
 NoSource:	0
+URL:		http://www.adobe.com/devnet/acrobat/fdftoolkit.html
 BuildRequires:	rpm-perlprov >= 4.1-13
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,21 +35,21 @@ Zestaw narzędzi do formularzy w plikach PDF (Acrobat Forms) - plik
 nagłówkowy.
 
 %package doc
-Summary:	Documentation and licensing information for fdftk
-Summary(pl.UTF-8):	Dokumentacja i treść licencji fdftk
+Summary:	Documentation and licensing information for Adobe FdfTk
+Summary(pl.UTF-8):	Dokumentacja i treść licencji Adobe FdfTk
 Group:		Documentation
 
 %description doc
-Documentation and licensing information for fdftk - common for C++
-library and Perl module.
+Documentation and licensing information for Adobe FdfTk - common for
+C++ library and Perl module.
 
 %description doc -l pl.UTF-8
-Dokumentacja i treść licencji fdftk - wspólne dla biblioteki w C++ i
-modułu Perla.
+Dokumentacja i treść licencji Adobe FdfTk - wspólne dla biblioteki w
+C++ i modułu Perla.
 
 %package -n perl-Acrobat-FDF
-Summary:	Acrobat::FDF Perl module
-Summary(pl.UTF-8):	Moduł Perla Acrobat::FDF
+Summary:	Acrobat::FDF Perl module - Perl interface to Adobe FdfTk
+Summary(pl.UTF-8):	Moduł Perla Acrobat::FDF - interfejs Perla do Adobe FdfTk
 Group:		Development/Languages/Perl
 
 %description -n perl-Acrobat-FDF
@@ -62,18 +60,18 @@ Zestaw narzędzi do formularzy w plikach PDF (Acrobat Forms) - moduł
 Perla.
 
 %prep
-%setup -q -n FDFToolkitForUNIX
+%setup -q -n FDFToolkitForUnix
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir},%{_examplesdir}/%{name}-%{version}}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-install HeadersAndLibraries/headers/fdftk.h $RPM_BUILD_ROOT%{_includedir}
-install -D HeadersAndLibraries/headers/FDF.pm $RPM_BUILD_ROOT%{perl_vendorarch}/Acrobat/FDF.pm
-install HeadersAndLibraries/linux/C/libfdftk.so $RPM_BUILD_ROOT%{_libdir}
-install -D HeadersAndLibraries/linux/PERL/fdf.so $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Acrobat/FDF/fdf.so
+install -D 'Headers and Libraries/Headers/FdfTk.h' $RPM_BUILD_ROOT%{_includedir}/FdfTk.h
+install -D 'Headers and Libraries/Headers/FDF.pm' $RPM_BUILD_ROOT%{perl_vendorarch}/Acrobat/FDF.pm
+install -D 'Headers and Libraries/LINUX/libFdfTk.so' $RPM_BUILD_ROOT%{_libdir}/libFdfTk.so
+install -D 'Headers and Libraries/LINUX/FDF.so' $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Acrobat/FDF/FDF.so
 
-cp -rf FormsExamples Samples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -rf Samples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,21 +81,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libfdftk.so
+%attr(755,root,root) %{_libdir}/libFdfTk.so
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/fdftk.h
+%{_includedir}/FdfTk.h
 
 %files doc
 %defattr(644,root,root,755)
-%doc Documentation/*.pdf LicenseAgreements/SDKEnglish4.03.01.pdf
-%lang(fr) %doc LicenseAgreements/SDKFrench\ 4.03.01.pdf
-%lang(de) %doc LicenseAgreements/SDKGerman4.3.01.pdf
-%lang(ja) %doc LicenseAgreements/SDKJapanese4.3.01.pdf
+%doc ReadMe.txt Acrobat\ FDF\ Toolkit\ EULA.pdf Documentation/*.pdf
 %{_examplesdir}/%{name}-%{version}
 
 %files -n perl-Acrobat-FDF
 %defattr(644,root,root,755)
-%{perl_vendorarch}/Acrobat
-%attr(755,root,root) %{perl_vendorarch}/auto/Acrobat
+%dir %{perl_vendorarch}/Acrobat
+%{perl_vendorarch}/Acrobat/FDF.pm
+%dir %{perl_vendorarch}/auto/Acrobat
+%dir %{perl_vendorarch}/auto/Acrobat/FDF
+%attr(755,root,root) %{perl_vendorarch}/auto/Acrobat/FDF/FDF.so
