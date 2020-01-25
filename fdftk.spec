@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Forms Data Format Toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi do formularzy PDF
 Name:		fdftk
